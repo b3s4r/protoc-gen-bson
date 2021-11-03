@@ -1,0 +1,11 @@
+syntax = "proto3";
+package test;
+
+option go_package = "proto/scalar";
+
+message ScalarMessage {
+	double double = 1;
+	float float = 2;
+	int32 int32 = 3;
+	int64 int64 = 4;
+}

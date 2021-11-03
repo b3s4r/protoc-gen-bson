@@ -1,0 +1,22 @@
+syntax = "proto3";
+package test;
+
+option go_package = "proto/map";
+
+message Foo {
+	string text = 1;
+}
+
+message MapMessage {
+	map<string, string> strings = 1;
+	map<string, int32> strings2 = 2;
+
+	// TODO(dape): add support for map values that are messages
+	// map<string, Foo> strings3 = 98;
+
+	// TODO(dape): add compiler failure checks to test; for now we just skip the problem.
+	// bson.M -> bson.primitive.M -> type M map[string]interface{}
+	// Therefore we "can" only support string as map key type.
+	// "can": we could support any type through conversion but that would be scary?
+	// map<int32, string> strings2 = 99;
+}

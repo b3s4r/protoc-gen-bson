@@ -1,0 +1,18 @@
+syntax = "proto3";
+package test;
+
+option go_package = "proto/nested";
+
+message Foo {
+	string text = 1;
+}
+
+message Bar {
+	Foo foo = 1;
+}
+
+// TODO(dape): Add support to message defined in messages (if/when needed?)
+message NestedMessage {
+	Foo foo = 1;
+	Bar bar = 2;
+}

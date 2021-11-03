@@ -1,0 +1,18 @@
+syntax = "proto3";
+package test;
+
+option go_package = "proto/repeated";
+
+message Foo {
+	string text = 1;
+}
+
+message Bar {
+	Foo foo = 1;
+}
+
+message RepeatedMessage {
+	repeated string tests = 1;
+	repeated Foo foos = 2;
+	repeated Bar bars = 3;	
+}
