@@ -8,3 +8,6 @@ test: build
 
 protoc-gen-bson/protoc-gen-bson: protoc-gen-bson/main.go
 	go build -o protoc-gen-bson/protoc-gen-bson ./protoc-gen-bson/main.go
+
+install: build
+	go install ./protoc-gen-bson/...
